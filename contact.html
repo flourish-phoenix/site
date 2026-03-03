@@ -45,8 +45,10 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 .footer-links a{font-size:.78rem;color:var(--text-light);text-decoration:none;transition:color .2s;}
 .footer-links a:hover{color:var(--terracotta);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:900px){nav{padding:14px 20px;}.nav-links li:not(:last-child){display:none;}footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}}
-
+@media(max-width:900px){
+  nav{padding:14px 20px;}
+  footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}
+}
   
   .contact-hero{padding:140px 72px 80px;max-width:720px;}
   .contact-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,4.5vw,3.4rem);color:var(--green-deep);line-height:1.1;margin-bottom:20px;}
@@ -97,14 +99,57 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     .contact-body{grid-template-columns:1fr;padding:0 24px 80px;gap:40px;}
     .form-row{grid-template-columns:1fr;}
   }
+    .menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+}
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--cream);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    gap: 18px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
   </style>
 </head>
 <body>
-<nav><a href="index.html" class="nav-logo"><img src="logo.png" alt="Flourish logo"><span class="nav-logo-text">Flourish Phoenix</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="approach.html">Our Approach</a></li>
-<li><a href="contact.html" class="nav-cta nav-active">Get In Touch</a></li>
-</ul></nav>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Flourish logo">
+    <span class="nav-logo-text">Flourish Phoenix</span>
+  </a>
+
+  <button class="menu-toggle">☰</button>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="approach.html">Our Approach</a></li>
+    <li><a href="contact.html" class="nav-cta nav-active">Get In Touch</a></li>
+  </ul>
+</nav>
 
 <section class="contact-hero">
   <div class="section-tag">Say Hello</div>
@@ -232,6 +277,16 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     } catch (error) {
       alert("Oops! There was a problem submitting your form.");
     }
+  });
+</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", function() {
+      nav.classList.toggle("active");
+    });
   });
 </script>
 </body>

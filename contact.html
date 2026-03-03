@@ -15,7 +15,6 @@ html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;overflow-x:hidden;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(245,240,230,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,48,34,.08);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo img{width: 40px;height: 40px;object-fit: cover;border-radius: 50%;}
 .nav-logo-text{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--green-deep);}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
 .nav-links a{font-family:'Spline Sans',sans-serif;font-size:.875rem;font-weight:500;color:var(--text-mid);text-decoration:none;letter-spacing:.02em;transition:color .2s;}
@@ -38,7 +37,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .form-note{margin-top:10px;font-size:.8rem;color:var(--text-light);}
 footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;align-items:center;justify-content:space-between;}
 .footer-brand{display:flex;align-items:center;gap:10px;}
-.footer-brand img{width: 40px;height: 40px;object-fit: cover;border-radius: 50%;}
+/* universal circular logos */
+.nav-logo img,
+.footer-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
 .footer-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--green-deep);}
 .footer-note{font-size:.78rem;color:var(--text-light);}
 .footer-links{display:flex;gap:20px;list-style:none;}

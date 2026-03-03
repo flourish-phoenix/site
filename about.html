@@ -65,7 +65,7 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 .footer-links a{font-size:.78rem;color:var(--text-light);text-decoration:none;transition:color .2s;}
 .footer-links a:hover{color:var(--terracotta);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:900px){nav{padding:14px 20px;}.nav-links li:not(:last-child){display:none;}footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}}
+@media(max-width:900px){nav{padding:14px 20px;}footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}}
 
   
   .about-hero{padding:140px 72px 80px;display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;}
@@ -127,16 +127,22 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo"><img src="logo.png" alt="Flourish logo"><span class="nav-logo-text">Flourish Phoenix</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li>
-<button class="menu-toggle">☰</button>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Flourish logo">
+    <span class="nav-logo-text">Flourish Phoenix</span>
+  </a>
+
+  <!-- Hamburger button -->
+  <button class="menu-toggle">☰</button>
+
+  <!-- Navigation links -->
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html" class="nav-active">About</a></li>
     <li><a href="approach.html">Our Approach</a></li>
+    <li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
   </ul>
-<li><a href="about.html" class="nav-active">About</a></li>
-<li><a href="approach.html">Our Approach</a></li>
-<li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
-</ul></nav>
+</nav>
 
 <!-- HERO / INTRO -->
 <section class="about-hero">

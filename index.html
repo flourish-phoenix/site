@@ -128,8 +128,12 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     <h1>Where <em>curious</em> kids come to flourish.</h1>
     <p class="hero-body">A small, joyful middle school coming to the heart of Phoenix. Hands-on projects, personalized learning, and a community where every teacher knows every student — and every student knows each other.</p>
     <div class="hero-form-wrap">
-      <form class="email-form" id="hero-form" name="email-signup-cta" method="POST" data-netlify="true" onsubmit="handleSignup(event, 'hero-success')">
-        <input type="email" name="email" id="hero-email" placeholder="Your email address" autocomplete="email" required>
+      <form class="email-form"
+        id="hero-form"
+        action="https://formspree.io/f/xlgwypqd"
+        method="POST"
+        onsubmit="handleSignup(event, 'hero-success')">
+        <input type="email" name="email" placeholder="Your email address" required>
         <button type="submit">Stay in the Loop</button>
       </form>
       <div class="success-msg" id="hero-success">You're on the list! We'll reach out soon.</div>
@@ -229,10 +233,15 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
   <h2 class="cta-heading">Curious if Flourish is the right fit for your family?</h2>
   <p class="cta-body">Sign up for updates on our info sessions and enrollment timeline. We'd love to connect.</p>
   <div class="cta-form-wrap">
-    <form class="email-form" id="cta-form" onsubmit="handleSignup(event, 'cta-success')">
-      <input type="email" name="email" placeholder="Your email address" autocomplete="email" required>
-      <button type="submit">Let's Connect</button>
-    </form>
+    <form 
+          class="email-form"
+          id="cta-form"
+          action="https://formspree.io/f/xlgwypqd"
+          method="POST"
+          onsubmit="handleSignup(event, 'cta-success')">
+  <input type="email" name="email" placeholder="Your email address" required>
+  <button type="submit">Let's Connect</button>
+</form>
     <div class="success-msg" id="cta-success">You're on the list! We'll reach out soon.</div>
     <p class="form-note">Questions? Email <a href="mailto:kriti@flourishschools.com" style="color:var(--terracotta);">kriti@flourishschools.com</a></p>
   </div>

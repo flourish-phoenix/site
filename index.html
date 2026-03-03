@@ -45,8 +45,10 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 .footer-links a{font-size:.78rem;color:var(--text-light);text-decoration:none;transition:color .2s;}
 .footer-links a:hover{color:var(--terracotta);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:900px){nav{padding:14px 20px;}.nav-links li:not(:last-child){display:none;}footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}}
-
+@media(max-width:900px){
+  nav{padding:14px 20px;}
+  footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}
+}
   .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:68px;overflow:hidden;}
   .hero-left{padding:80px 48px 80px 72px;display:flex;flex-direction:column;justify-content:center;}
   .hero-eyebrow{font-family:'Spline Sans',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:20px;display:flex;align-items:center;gap:10px;animation:fadeUp .7s ease .1s both;}
@@ -106,6 +108,40 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     .about-inner{grid-template-columns:1fr;padding:48px 28px;gap:36px;}
     .cta-section{padding:72px 24px;}
   }
+    .menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+}
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--cream);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    gap: 18px;
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
   </style>
 </head>
 <body>
@@ -114,11 +150,15 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     <img src="logo.png" alt="Flourish logo">
     <span class="nav-logo-text">Flourish Phoenix</span>
   </a>
-  <ul class="nav-links"><li><a href="index.html" class="nav-active">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="approach.html">Our Approach</a></li>
-<li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
-</ul>
+
+  <button class="menu-toggle">☰</button>
+
+  <ul class="nav-links">
+    <li><a href="index.html" class="nav-active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="approach.html">Our Approach</a></li>
+    <li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
@@ -281,5 +321,17 @@ function handleSignup(event, successId) {
   });
 }
 </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", function() {
+    nav.classList.toggle("active");
+  });
+});
+</script>
+  
 </body>
 </html>

@@ -9,14 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
   
-  
 :root{--cream:#F5F0E6;--cream-dark:#EBE5D5;--green-deep:#1E3022;--green-mid:#2C4735;--green-sage:#5B713B;--terracotta:#D26033;--amber:#EF9E32;--text-dark:#1E3022;--text-mid:#3a5040;--text-light:#7a8c7b;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;overflow-x:hidden;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(245,240,230,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,48,34,.08);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo img{height:48px;width:auto;object-fit:contain;}
 .nav-logo-text{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--green-deep);}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
 .nav-links a{font-family:'Spline Sans',sans-serif;font-size:.875rem;font-weight:500;color:var(--text-mid);text-decoration:none;letter-spacing:.02em;transition:color .2s;}
@@ -39,7 +37,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .form-note{margin-top:10px;font-size:.8rem;color:var(--text-light);}
 footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;align-items:center;justify-content:space-between;}
 .footer-brand{display:flex;align-items:center;gap:10px;}
-.footer-brand img{height:48px;width:auto;object-fit:contain;}
+/* universal circular logos */
+.nav-logo img,
+.footer-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
 .footer-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--green-deep);}
 .footer-note{font-size:.78rem;color:var(--text-light);}
 .footer-links{display:flex;gap:20px;list-style:none;}

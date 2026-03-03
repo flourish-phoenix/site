@@ -8,7 +8,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-  
+  /* show the hamburger only on small screens */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
 :root{--cream:#F5F0E6;--cream-dark:#EBE5D5;--green-deep:#1E3022;--green-mid:#2C4735;--green-sage:#5B713B;--terracotta:#D26033;--amber:#EF9E32;--text-dark:#1E3022;--text-mid:#3a5040;--text-light:#7a8c7b;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -107,6 +127,12 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo"><img src="logo.png" alt="Flourish logo"><span class="nav-logo-text">Flourish Phoenix</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li>
+<button class="menu-toggle">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="approach.html">Our Approach</a></li>
+  </ul>
 <li><a href="about.html" class="nav-active">About</a></li>
 <li><a href="approach.html">Our Approach</a></li>
 <li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
@@ -226,5 +252,13 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 </section>
 
 <footer><div class="footer-brand"><img src="logo.png" alt="Flourish Phoenix"><span class="footer-name">Flourish Phoenix</span></div><p class="footer-note">© 2026 Flourish Phoenix · Opening Fall 2026</p><ul class="footer-links"><li><a href="https://www.flourishschools.com" target="_blank">Flourish Schools ↗</a></li><li><a href="contact.html">Contact</a></li></ul></footer>
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+</script>
 </body>
 </html>

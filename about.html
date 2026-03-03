@@ -17,18 +17,6 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-}
 :root{--cream:#F5F0E6;--cream-dark:#EBE5D5;--green-deep:#1E3022;--green-mid:#2C4735;--green-sage:#5B713B;--terracotta:#D26033;--amber:#EF9E32;--text-dark:#1E3022;--text-mid:#3a5040;--text-light:#7a8c7b;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -123,6 +111,29 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     .interests-section{padding:60px 24px;}
     .interests-grid{grid-template-columns:1fr;}
   }
+    /* MOBILE NAV FIX */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--cream);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
   </style>
 </head>
 <body>

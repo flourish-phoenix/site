@@ -46,7 +46,7 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 .footer-links a{font-size:.78rem;color:var(--text-light);text-decoration:none;transition:color .2s;}
 .footer-links a:hover{color:var(--terracotta);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:900px){nav{padding:14px 20px;}.nav-links li:not(:last-child){display:none;}footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}}
+@media(max-width:900px){nav{padding:14px 20px;}footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}}
 
   
   .page-hero{padding:140px 72px 72px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;}
@@ -98,14 +98,57 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     .pursuit-examples{grid-template-columns:1fr;}
     .tuition-section{grid-template-columns:1fr;padding:60px 24px;gap:40px;}
   }
+    .menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+}
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--cream);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    gap: 18px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
   </style>
 </head>
 <body>
-<nav><a href="index.html" class="nav-logo"><img src="logo.png" alt="Flourish logo"><span class="nav-logo-text">Flourish Phoenix</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="approach.html" class="nav-active">Our Approach</a></li>
-<li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
-</ul></nav>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Flourish logo">
+    <span class="nav-logo-text">Flourish Phoenix</span>
+  </a>
+
+  <button class="menu-toggle">☰</button>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="approach.html" class="nav-active">Our Approach</a></li>
+    <li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
+  </ul>
+</nav>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
@@ -195,5 +238,17 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 </section>
 
 <footer><div class="footer-brand"><img src="logo.png" alt="Flourish Phoenix"><span class="footer-name">Flourish Phoenix</span></div><p class="footer-note">© 2026 Flourish Phoenix · Opening Fall 2026</p><ul class="footer-links"><li><a href="https://www.flourishschools.com" target="_blank">Flourish Schools ↗</a></li><li><a href="contact.html">Contact</a></li></ul></footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", function() {
+      nav.classList.toggle("active");
+    });
+  });
+</script>
+
 </body>
 </html>

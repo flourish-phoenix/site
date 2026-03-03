@@ -13,7 +13,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(245,240,230,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,48,34,.08);}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(245,240,230,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,48,34,.08);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo img{height:48px;width:auto;object-fit:contain;}
 .nav-logo-text{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--green-deep);}
@@ -126,7 +126,7 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     gap: 18px;
-    z-index: 100;
+    z-index: 1001;
   }
 
   .nav-links.active {

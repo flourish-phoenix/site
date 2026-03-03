@@ -229,10 +229,10 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
   <h2 class="cta-heading">Curious if Flourish is the right fit for your family?</h2>
   <p class="cta-body">Sign up for updates on our info sessions and enrollment timeline. We'd love to connect.</p>
   <div class="cta-form-wrap">
-    <div class="email-form" id="cta-form">
-      <input type="email" id="cta-email" placeholder="Your email address" autocomplete="email">
-      <button onclick="handleSignup('cta-email','cta-success','cta-form')">Let's Connect</button>
-    </div>
+    <form class="email-form" id="cta-form" onsubmit="handleSignup(event, 'cta-success')">
+      <input type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+      <button type="submit">Let's Connect</button>
+    </form>
     <div class="success-msg" id="cta-success">You're on the list! We'll reach out soon.</div>
     <p class="form-note">Questions? Email <a href="mailto:kriti@flourishschools.com" style="color:var(--terracotta);">kriti@flourishschools.com</a></p>
   </div>

@@ -46,8 +46,6 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
 .footer-links a{font-size:.78rem;color:var(--text-light);text-decoration:none;transition:color .2s;}
 .footer-links a:hover{color:var(--terracotta);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:900px){nav{padding:14px 20px;}footer{flex-direction:column;gap:14px;text-align:center;padding:32px 20px;}}
-
   
   .page-hero{padding:140px 72px 72px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;}
   .page-hero-text h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,4.5vw,3.6rem);color:var(--green-deep);line-height:1.1;margin-bottom:22px;}
@@ -90,14 +88,53 @@ footer{border-top:1px solid rgba(30,48,34,.1);padding:36px 72px;display:flex;ali
   .tuition-card-dot{width:7px;height:7px;background:var(--amber);border-radius:50%;margin-top:7px;flex-shrink:0;}
   .tuition-card-text{font-size:.88rem;color:rgba(245,240,230,.78);line-height:1.6;}
   .tuition-card-text strong{color:var(--cream);font-family:'Spline Sans',sans-serif;font-size:.82rem;font-weight:600;display:block;margin-bottom:2px;letter-spacing:.02em;}
-  @media(max-width:900px){
-    .page-hero{grid-template-columns:1fr;padding:110px 24px 56px;gap:40px;}
-    .foundations-section{padding:0 24px 60px;}
-    .found-grid{grid-template-columns:1fr;}
-    .pursuits-section{padding:60px 24px;}
-    .pursuit-examples{grid-template-columns:1fr;}
-    .tuition-section{grid-template-columns:1fr;padding:60px 24px;gap:40px;}
+  @media (max-width: 900px) {
+
+  nav {
+    padding: 14px 20px;
   }
+
+  footer {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    padding: 32px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--cream);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    gap: 18px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* existing responsive layout rules */
+  .page-hero {
+    grid-template-columns: 1fr;
+    padding: 110px 24px 56px;
+    gap: 40px;
+  }
+
+  .foundations-section { padding: 0 24px 60px; }
+  .found-grid { grid-template-columns: 1fr; }
+  .pursuits-section { padding: 60px 24px; }
+  .pursuit-examples { grid-template-columns: 1fr; }
+  .tuition-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+}
     .menu-toggle {
   display: none;
   font-size: 28px;
